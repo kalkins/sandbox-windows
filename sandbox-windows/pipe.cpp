@@ -47,26 +47,40 @@ namespace sandbox {
         CloseHandle(pipe);
     }
 
-    char Pipe::read()
+    template<typename T>
+    T Pipe::read()
     {
         bool success = false;
-        TCHAR data;
+        T data;
 
-        success = ReadFile(pipe, &data, sizeof(TCHAR), &bytesRead, NULL);
+        success = ReadFile(pipe, &data, sizeof(T), &bytesRead, NULL);
 
-        return (char) data;
+        return data;
     }
 
-    void Pipe::write(char data)
+    std::string Pipe::read()
     {
-        bool success = false;
-        success = WriteFile(pipe, &data, sizeof(char), &bytesWritten, NULL);
-    }
+        std::string str;
+        char c = read<char>();
 
-    void Pipe::write(std::string data)
-    {
-        for (char c : data) {
-            write(c);
+        while (c != '\0') {
+            str += c;
+            c = read<char>();
         }
+
+        return str;
+    }
+
+    std::string Pipe::readLine()
+    {
+        std::string str;
+        char c = read<char>();
+
+        while (c != '\0' && c != '\n') {
+            str += c;
+            c = read<char>();
+        }
+
+        return str;
     }
 }

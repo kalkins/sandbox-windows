@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdint.h>
 #include <k4a/k4a.h>
 #include "k4a_helper.hpp"
 #include "pipe.hpp"
 
 using namespace sandbox;
+
+const int TIMEOUT = 1000;
 
 int main()
 {
@@ -17,38 +20,60 @@ int main()
     config.camera_fps = K4A_FRAMES_PER_SECOND_30;
 
     k4a_device_t device;
+    k4a_capture_t capture = NULL;
+    k4a_image_t depth_image = NULL;
 
     if (k4a_open_start(device, config)) {
         std::cout << "Could not connect to kinect" << std::endl;
         return -1;
     }
 
+    std::cout << "Creating pipe" << std::endl;
     Pipe pipe("sandbox_pipe");
 
-    char c;
+    std::string request;
     std::string msg;
-    std::vector<uint16_t> data = { 1, 2, 3, 4 };
 
+    std::cout << "Connected" << std::endl;
     while (true) {
-        std::cout << "Waiting for message" << std::endl;
-        c = pipe.read();
+        request = pipe.readLine();
 
-        if (c == 'r') {
-            std::cout << "Sending response" << std::endl;
-            pipe.write(std::to_string(data.size()));
-
-            for (auto& d : data) {
-                d++;
-                pipe.write(std::to_string(d));
+        if (request == "r") {
+            switch (k4a_device_get_capture(device, &capture, TIMEOUT)) {
+            case K4A_WAIT_RESULT_SUCCEEDED:
+                break;
+            case K4A_WAIT_RESULT_TIMEOUT:
+                std::cout << "K4A Request timed out" << std::endl;
+                capture = NULL;
+                break;
+            case K4A_WAIT_RESULT_FAILED:
+                std::cout << "K4A Failed to read a capture" << std::endl;
+                break;
             }
 
-            std::cout << "Message sent" << std::endl;
-        }
-        else if (msg == "q") {
+            if (capture != NULL) {
+                depth_image = k4a_capture_get_depth_image(capture);
+                uint8_t *image_buffer = k4a_image_get_buffer(depth_image);
+                size_t buffer_size = k4a_image_get_size(depth_image);
+                uint16_t height = k4a_image_get_height_pixels(depth_image);
+                uint16_t width = k4a_image_get_width_pixels(depth_image);
+
+				pipe.write(height);
+				pipe.write(width);
+                pipe.write((uint32_t) buffer_size);
+                pipe.write(image_buffer, buffer_size);
+            } else {
+				pipe.write<uint16_t>(0);
+				pipe.write<uint16_t>(0);
+            }
+        } else if (request == "q") {
+            std::cout << "The receiver closed the connection" << std::endl;
             break;
+        } else {
+            std::cout << "Invalid request: " << request << std::endl;
         }
     }
 
-    k4a_close(device);
+    sandbox::k4a_close(device);
     return 0;
 }
