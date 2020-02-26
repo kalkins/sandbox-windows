@@ -10,31 +10,12 @@ using namespace sandbox;
 
 const int TIMEOUT = 1000;
 
-int main()
+void transfer_image(Pipe &pipe, k4a_device_t &device)
 {
-    std::cout << "Connecting to Kinect" << std::endl;
-    k4a_device_configuration_t config = K4A_DEVICE_CONFIG_INIT_DISABLE_ALL;
-    config.color_format = K4A_IMAGE_FORMAT_COLOR_MJPG;
-    config.color_resolution = K4A_COLOR_RESOLUTION_OFF;
-    config.depth_mode = K4A_DEPTH_MODE_NFOV_UNBINNED;
-    config.camera_fps = K4A_FRAMES_PER_SECOND_30;
-
-    k4a_device_t device;
+    std::string request;
     k4a_capture_t capture = NULL;
     k4a_image_t depth_image = NULL;
 
-    if (k4a_open_start(device, config)) {
-        std::cout << "Could not connect to kinect" << std::endl;
-        return -1;
-    }
-
-    std::cout << "Creating pipe" << std::endl;
-    Pipe pipe("sandbox_pipe");
-
-    std::string request;
-    std::string msg;
-
-    std::cout << "Connected" << std::endl;
     while (true) {
         request = pipe.readLine();
 
@@ -62,6 +43,8 @@ int main()
 				pipe.write(width);
                 pipe.write((uint32_t) buffer_size);
                 pipe.write(image_buffer, buffer_size);
+
+                k4a_image_release(depth_image);
             } else {
 				pipe.write<uint16_t>(0);
 				pipe.write<uint16_t>(0);
@@ -73,7 +56,34 @@ int main()
             std::cout << "Invalid request: " << request << std::endl;
         }
     }
+}
 
-    sandbox::k4a_close(device);
-    return 0;
+int main()
+{
+    int status = 0;
+
+    std::cout << "Connecting to Kinect" << std::endl;
+    k4a_device_configuration_t config = K4A_DEVICE_CONFIG_INIT_DISABLE_ALL;
+    config.color_format = K4A_IMAGE_FORMAT_COLOR_MJPG;
+    config.color_resolution = K4A_COLOR_RESOLUTION_OFF;
+    config.depth_mode = K4A_DEPTH_MODE_NFOV_UNBINNED;
+    config.camera_fps = K4A_FRAMES_PER_SECOND_30;
+
+    k4a_device_t device;
+
+    if (k4a_open_start(device, config)) {
+        std::cout << "Could not connect to kinect" << std::endl;
+        status = -1;
+    } else {
+        std::cout << "Creating pipe" << std::endl;
+        Pipe pipe("sandbox_pipe");
+        std::cout << "Connected" << std::endl;
+
+        transfer_image(pipe, device);
+
+        sandbox::k4a_close(device);
+    }
+
+    system("pause");
+    return status;
 }
