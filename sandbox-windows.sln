@@ -5,22 +5,46 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sandbox-windows", "sandbox-windows\sandbox-windows.vcxproj", "{F3D02B12-669B-4168-AB21-74EA6593A59D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "sandbox-installer", "sandbox-installer\sandbox-installer.vdproj", "{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|ARM.ActiveCfg = Debug|Win32
+		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|ARM64.ActiveCfg = Debug|Win32
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|x64.ActiveCfg = Debug|x64
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|x64.Build.0 = Debug|x64
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|x86.ActiveCfg = Debug|Win32
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Debug|x86.Build.0 = Debug|Win32
+		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|Any CPU.ActiveCfg = Release|Win32
+		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|ARM.ActiveCfg = Release|Win32
+		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|ARM64.ActiveCfg = Release|Win32
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|x64.ActiveCfg = Release|x64
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|x64.Build.0 = Release|x64
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|x86.ActiveCfg = Release|Win32
 		{F3D02B12-669B-4168-AB21-74EA6593A59D}.Release|x86.Build.0 = Release|Win32
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Debug|Any CPU.ActiveCfg = Debug
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Debug|ARM.ActiveCfg = Debug
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Debug|ARM64.ActiveCfg = Debug
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Debug|x64.ActiveCfg = Debug
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Debug|x86.ActiveCfg = Debug
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Release|Any CPU.ActiveCfg = Release
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Release|ARM.ActiveCfg = Release
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Release|ARM64.ActiveCfg = Release
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Release|x64.ActiveCfg = Release
+		{5FD78B29-63AB-40E2-B02B-FD12D05F12D3}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
