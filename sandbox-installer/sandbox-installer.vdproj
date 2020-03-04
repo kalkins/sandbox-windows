@@ -15,7 +15,31 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_263DCEC3EF654544B454D0398A62EE2F"
+        "MsmKey" = "8:_2364951D43D7455390063CEBAE607814"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4258F3C7AD2F4D4896F70E608B18995B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_67FB2EF5DCE94DE299FD873CE61806B7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6D0E11BA32D34926B82D5637903660AE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8B773BBB74B246E4AD90E8912541601D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,7 +51,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C14B77B0508D4DEFAE6EEB95B29E52A5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C8A6B7A4DBFF4AF082F4242BC88BA25A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F04D84B556C344F68BE366B297B941E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -56,6 +92,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -80,6 +124,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -102,10 +154,110 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_263DCEC3EF654544B454D0398A62EE2F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2364951D43D7455390063CEBAE607814"
+            {
+            "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\k4a.lib"
+            "TargetName" = "8:k4a.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4258F3C7AD2F4D4896F70E608B18995B"
+            {
+            "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\depthengine_2_0.dll"
+            "TargetName" = "8:depthengine_2_0.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_67FB2EF5DCE94DE299FD873CE61806B7"
             {
             "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\k4a.dll"
             "TargetName" = "8:k4a.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6D0E11BA32D34926B82D5637903660AE"
+            {
+            "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\k4arecord.dll"
+            "TargetName" = "8:k4arecord.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8B773BBB74B246E4AD90E8912541601D"
+            {
+            "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\k4arecord.lib"
+            "TargetName" = "8:k4arecord.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C14B77B0508D4DEFAE6EEB95B29E52A5"
+            {
+            "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\k4a.pdb"
+            "TargetName" = "8:k4a.pdb"
             "Tag" = "8:"
             "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
             "Condition" = "8:"
@@ -126,6 +278,26 @@
             {
             "SourcePath" = "8:C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.24.28314\\bin\\Hostx64\\x64\\vcruntime140_1.dll"
             "TargetName" = "8:vcruntime140_1.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F04D84B556C344F68BE366B297B941E1"
+            {
+            "SourcePath" = "8:..\\packages\\Microsoft.Azure.Kinect.Sensor.1.3.0\\lib\\native\\amd64\\release\\k4arecord.pdb"
+            "TargetName" = "8:k4arecord.pdb"
             "Tag" = "8:"
             "Folder" = "8:_451799517E93464282968DD6EA3CC30C"
             "Condition" = "8:"
