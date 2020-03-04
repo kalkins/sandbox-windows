@@ -322,7 +322,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_451799517E93464282968DD6EA3CC30C"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -371,7 +371,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:sandbox-installer"
         "ProductCode" = "8:{DD6EC523-0633-4F7A-B1EB-5EC5745935C7}"
-        "PackageCode" = "8:{C88AC8A3-02C7-4E48-81C0-793298471BFA}"
+        "PackageCode" = "8:{593F38FE-90F9-42D8-8018-CE584AB06060}"
         "UpgradeCode" = "8:{2C9403D4-50EF-422F-954E-C17EA2BB8BB6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -392,7 +392,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
